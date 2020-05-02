@@ -1,0 +1,35 @@
+<html>
+  {{title}}
+  <style>
+   table{
+     border: 2px solid black;
+     width : 50%;
+     border-collapse:collapse;
+
+   }
+   tr,th,td{
+     border: 1px solid green;
+     padding: 1px;
+
+   }
+
+  </style>
+     <table>
+       <tr>
+
+         <th>item_id</th>
+         <th>cost</th>
+         <th>sell</th>
+         <th>margin</th>
+       </tr>
+       {% for instance in queryset %}
+       <tr>
+
+         <td>{{instance.item_id}}</td>
+         <td>{{instance.cost}}</td>
+         <td>{{instance.sell}}</td>
+         <td>{{instance.gross_margin}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+</html>

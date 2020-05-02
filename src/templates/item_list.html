@@ -1,0 +1,36 @@
+
+<html>
+  {{title}}
+     <style>
+       table{
+          border: 2px solid black;
+          width : 50%;
+          border-collapse: collapse;
+       }
+       th,td{
+          border : 1px solid black;
+          padding : 1px;
+       }
+     </style>
+
+     <table>
+       <tr>
+
+         <th>item_id</th>
+         <th>model_no</th>
+         <th>make</th>
+         <th>description</th>
+         <th>Action</th>
+       </tr>
+       {% for instance in queryset %}
+       <tr>
+         
+         <td>{{instance.item_id}}</td>
+         <td>{{instance.model_no}}</td>
+         <td>{{instance.make}}</td>
+         <td>{{instance.description}}</td>
+         <td><a href="/price_entry/?item_id={{instance.item_id}}">Price</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+</html>
